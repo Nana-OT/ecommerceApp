@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View,ImageBackground,TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailsScreen from "./screens/Login"
 
-export default function App() {
+
+function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       
       <ImageBackground style={styles.imgback} source={require("./assets/icon.png")} />
        <View style={styles.backStyle}>
@@ -14,13 +17,30 @@ export default function App() {
         <View>
           <TouchableOpacity style={{borderWidth:5,position:"absolute",alignItems:"center",justifyContent:"center",borderColor:"green",width:150,height:50,marginRight:200}}>
             <Text style={{color:"white"}}
-            
-            >Next Page</Text>
+             onPress={() => navigation.navigate('Details')}
+            >Login Page</Text>
 
           </TouchableOpacity>
         </View>
-        
+
+      
     </View>
+  );
+}
+
+<DetailsScreen />;
+
+
+
+const Stack = createNativeStackNavigator();
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
