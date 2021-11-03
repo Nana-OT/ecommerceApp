@@ -8,7 +8,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View,ImageBackground } f
 function DetailsScreen({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-         
+        <ImageBackground style={styles.lback} source={require("../assets/logback.png")} />
           <View>
               <Text style={styles.hell}>Hello User</Text>
           </View>
@@ -19,8 +19,16 @@ function DetailsScreen({ navigation }) {
               <TextInput style={styles.pass}placeholder="Enter password"/>
           </View>
           <View style={styles.tv}>
-              <TouchableOpacity style={styles.touch}>
+              <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('Details')}>
                   <Text>Login</Text>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.acctouch}>
+            <Text style={styles.acc}>Don't have an account?</Text>
+          </View>
+          <View style={styles.acctouch}>
+          <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate('SignUp')}>
+                  <Text>Sign Up</Text>
               </TouchableOpacity>
           </View>
 
@@ -29,6 +37,7 @@ function DetailsScreen({ navigation }) {
   );
 }
 
+<DetailsScreen />;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -36,10 +45,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  acc:{
+    color: "white", 
+    marginTop: 30
+  },
+  acctouch:{
+    
+  },
+  touch1:{
+    backgroundColor: "#00FF00",
+      width:100,
+      height:30,
+      borderRadius:5,
+      alignItems: 'center', 
+      justifyContent: 'center',
+      marginBottom:50
+      
+  },
   hell:{
     
       marginBottom: 20,
-      fontSize: 30
+      fontSize: 30,
+      fontWeight: "800",
+      color: "black"
 
   },
   user:{
@@ -62,7 +90,7 @@ const styles = StyleSheet.create({
 
   },
   touch:{
-      backgroundColor: "#0000FF",
+      backgroundColor: "#00FF00",
       width:200,
       height:30,
       borderRadius:5,
@@ -77,7 +105,7 @@ const styles = StyleSheet.create({
   lback:{
     width: "100%",
     height: "100%",
-    
+    position:"absolute",
     resizeMode:"cover",
   },
 

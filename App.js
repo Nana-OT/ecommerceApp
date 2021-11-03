@@ -3,7 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, View,ImageBackground,TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DetailsScreen from "./screens/Login"
+import LoginScreen from "./screens/Login";
+import Details from './screens/Details';
+import SignUp from './screens/SignUp'
 
 
 function HomeScreen({ navigation }) {
@@ -12,13 +14,16 @@ function HomeScreen({ navigation }) {
       
       <ImageBackground style={styles.imgback} source={require("./assets/icon.png")} />
        <View style={styles.backStyle}>
-        <Text style={styles.txt}>Welcome to the Bike Shop</Text>
+        <Text style={styles.txt}>Welcome to</Text>
+        </View >
+        <View style={styles.backStyle1}>
+          <Text style={styles.txt1}>The Bike Shop</Text>
         </View>  
         <View>
-          <TouchableOpacity style={{borderWidth:5,position:"absolute",alignItems:"center",justifyContent:"center",borderColor:"green",width:150,height:50,marginRight:200}}>
-            <Text style={{color:"white"}}
-             onPress={() => navigation.navigate('Details')}
-            >Login Page</Text>
+          <TouchableOpacity style={{borderWidth:5,position:"absolute",alignItems:"center",justifyContent:"center",borderColor:"green",borderRadius: 7,width:150,height:50,marginRight:100}}>
+            <Text style={{color:"white", fontWeight: "500", fontStyle: "italic"}}
+             onPress={() => navigation.navigate('Login')}
+            > Click To Login Page</Text>
 
           </TouchableOpacity>
         </View>
@@ -28,7 +33,8 @@ function HomeScreen({ navigation }) {
   );
 }
 
-<DetailsScreen />;
+<LoginScreen />;
+<Details />
 
 
 
@@ -36,9 +42,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={HomeScreen} />
+        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="SignUp" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -55,10 +63,26 @@ const styles = StyleSheet.create({
      position:"absolute",
      top:50
   },
+  backStyle1:{
+    position:"absolute",
+     top:90
+
+  },
+  txt1:{
+    color:"white",
+    fontSize:20,
+    fontWeight: "600",
+  
+
+  },
+
   txt:{
 
     color:"white",
     fontSize:30,
+    fontWeight: "600",
+  
+
     
   },
   imgback:{
