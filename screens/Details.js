@@ -7,49 +7,101 @@ const Details = ({ navigation }) => {
             <View>
                 <Text style={styles.txt}> Products Available</Text>
             </View>
-            <View>
+            <View style={styles.view1}>
             <TouchableOpacity>
             <Image source = {require('../assets/bike1.png')} style={styles.bike1}/>
             </TouchableOpacity>
-            </View>
-            <View>
             <TouchableOpacity >
             <Image source = {require('../assets/bike2.png')} style={styles.bike2}/>
             </TouchableOpacity>
             </View>
-            <View style={styles.view3}>
+            <View style={styles.view2}>
             <TouchableOpacity>
             <Image source = {require('../assets/bike3.png')} style={styles.bike3}/>
             </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source = {require('../assets/bike4.png')} style={styles.bike4}/>
+            </TouchableOpacity>
             </View>
-      
+            <View style={styles.view3}>
+            <TouchableOpacity>
+            <Image source = {require('../assets/bike5.png')} style={styles.bike5}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source = {require('../assets/bike6.png')} style={styles.bike6}/>
+            </TouchableOpacity>
+            </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     bike1:{
-        width: "50%",
-        height: "50%",
-        padding: 20,
-        marginTop: 40,
+        width: 170,
+        height: 200,
         resizeMode: "contain",
+        position: "absolute"
+    },
+    view1:{
+        flexDirection: "row",
+
+    },
+    view2:{
+        flexDirection: "row",
+
+
     },
     bike2:{
-        width: "50%",
-        height: "65%",
-        bottom: 750,
-        marginHorizontal: 200,
+        width:180,
+        height: 200,
         resizeMode: "contain",
+        marginLeft: 180,
+        position: "absolute"
 
     },
     bike3:{
-        
+        width: 170,
+        height: 190,
+        marginTop: 200,
+        position: "absolute", 
+        resizeMode: "contain"
+           
+    },
+    bike4:{
+        width: 180,
+        height: 400,
+        marginBottom: 200 ,
+        marginTop: 90,
+        position: "absolute",
+        marginLeft: 180,
+        resizeMode: "contain",       
     },
     view3:{
-        resizeMode: "contain",
+        flexDirection: "row"
 
     },
+    bike5:{
+        width: 180,
+        height: 160,
+        position: "absolute",
+        resizeMode: "contain",
+        marginTop: 400,
+        
+
+    },
+    bike6:{
+        width: 180,
+        height: 160,
+        position: "absolute",
+        resizeMode: "contain",
+        marginTop: 400,
+        marginLeft: 180,
+
+
+
+
+    },
+    
     txt:{
         textAlign: "center",
         fontSize: 20,
