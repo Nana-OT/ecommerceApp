@@ -1,46 +1,95 @@
 import React from 'react';
-import { StyleSheet, Text, View,ImageBackground,TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground,TouchableOpacity, FlatList,SafeAreaView,Image } from 'react-native';
 
-const Details = ({ navigation }) => {
+const DATA = [
+    {
+      id:1,
+      title: 'All-City Bike',
+      image:require("../assets/bike1.png"),
+      price: "GHS 950.00",
+      Size: "29-inches",
+      Review: "Good Quality"
+    },
+    {
+      id: 2,
+      title: 'Brompton Bike',
+      image:require("../assets/bike2.png"),
+      price: "GHS 1050.00",
+      Size: "26-inches",
+      Review: "Good Quality"
+    },
+    {
+      id: 3,
+      title: 'Colnago Bike',
+      image:require("../assets/bike3.png"),
+      price: "GHS 950.00",
+      Size: "28-inches",
+      Review: "Good Quality"
+    },
+    {
+        id: 4,
+        title: '3T Bike',
+        image:require("../assets/bike4.png"),
+        price: "GHS 750.00",
+        Size: "26.5-inches",
+        Review: "Good Quality"
+      },
+      {
+        id: 5,
+        title: 'Bianchi Bike',
+        image:require("../assets/bike5.png"),
+        price: "GHS 700.00",
+        Size: "29-inches",
+        Review: "Good Quality"
+      },
+      {
+        id: 6,
+        title: 'Alchemy Bike',
+        image:require("../assets/bike6.png"),
+        price: "GHS 800.00",
+        Size: "27-inches",
+        Review: "Good Quality"
+      },
+  ];
+  
+  
+  
+  const Details = ({ navigation }) => {
+
+    const Item = ({ data }) => {
+      return(
+      <TouchableOpacity style={styles.items} onPress={() => navigation.navigate('specs',data)}>
+        <Image style={styles.bike1} source={data.image}  />
+        <Text >{data.title}</Text>
+      </TouchableOpacity>
+    )};
+
+
+    const renderItem = ({ item }) =><Item data={item} />;
+  
     return (
-        <View>
-            <View>
-                <Text style={styles.txt}> Products Available</Text>
-            </View>
-            <View style={styles.view1}>
-            <TouchableOpacity>
-            <Image source = {require('../assets/bike1.png')} style={styles.bike1}/>
-            </TouchableOpacity>
-            <TouchableOpacity >
-            <Image source = {require('../assets/bike2.png')} style={styles.bike2}/>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.view2}>
-            <TouchableOpacity>
-            <Image source = {require('../assets/bike3.png')} style={styles.bike3}/>
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <Image source = {require('../assets/bike4.png')} style={styles.bike4}/>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.view3}>
-            <TouchableOpacity>
-            <Image source = {require('../assets/bike5.png')} style={styles.bike5}/>
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <Image source = {require('../assets/bike6.png')} style={styles.bike6}/>
-            </TouchableOpacity>
-            </View>
-        </View>
-    )
-};
+      <SafeAreaView style={styles.container}>
+        <FlatList
+        numColumns={2}
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </SafeAreaView>
+    );
+  }
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        margin:5
+    },
     bike1:{
+        
         width: 170,
-        height: 200,
+        height: 150,
         resizeMode: "contain",
-        position: "absolute"
+        
     },
     view1:{
         flexDirection: "row",
@@ -51,12 +100,11 @@ const styles = StyleSheet.create({
 
 
     },
-    bike2:{
-        width:180,
-        height: 200,
-        resizeMode: "contain",
-        marginLeft: 180,
-        position: "absolute"
+    items:{
+        
+        top:100,
+        flex:1,
+        paddingTop:5,
 
     },
     bike3:{
