@@ -7,6 +7,7 @@ import LoginScreen from "./screens/Login";
 import Details from './screens/Details';
 import SignUp from './screens/SignUp';
 import Specifications from './screens/Specifications';
+import cart from './screens/cart';
 
 
 
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Specifications" component={Specifications} />
+        <Stack.Screen name="cart" component={cart} />
       </Stack.Navigator>
     </NavigationContainer>
   );

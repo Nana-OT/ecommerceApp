@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View,ImageBackground,TouchableOpacity, FlatList,SafeAreaView,Image } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground,TouchableOpacity, FlatList,SafeAreaView,Image, TextInput } from 'react-native';
 
-import SearchBar from '../screens/Components/SearchBar';
 
 const DATA = [
     {
@@ -183,6 +182,12 @@ const DATA = [
   
     return (
       <SafeAreaView style={styles.container}>
+        <View>
+          <Text style={styles.product}>Products Available</Text>
+        </View>
+        <View>
+          <TextInput style={{borderWidth:2,height:40,top:20,borderRadius:10}} placeholder="search" />
+        </View>
         <FlatList
         numColumns={2}
           data={DATA}
@@ -198,6 +203,10 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         margin:5
+    },
+    product:{
+      fontSize: 25
+
     },
     title:{
       fontSize: 100
@@ -263,9 +272,6 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         marginTop: 400,
         marginLeft: 180,
-
-
-
 
     },
     

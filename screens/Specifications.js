@@ -35,7 +35,7 @@ const Specifications=({ navigation,route })=>{
             <Text style={styles.promo}>{data.Promo}</Text>
             </View>
             <View style={styles.cart}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('cart')}>
                     <Text>Add To Cart</Text>
                 </TouchableOpacity>
             </View>

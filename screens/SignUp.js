@@ -54,27 +54,33 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 5,
     height: 40,
-    borderColor: "#f0f8ff",
+    borderColor: "#000",
     backgroundColor: "#f9f9f9",
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 3
 
   },
   newem:{
     width: 300,
     borderRadius: 5,
     height: 40,
-    borderColor: "#f0f8ff",
+    borderColor: "#000",
     backgroundColor: "#f9f9f9",
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 3
 
   },
   newla:{
     width: 300,
     borderRadius: 5,
     height: 40,
-    borderColor: "#f0f8ff",
+    borderColor: "#000",
     backgroundColor: "#f9f9f9",
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 3
 
   },
   touch1:{
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 5,
     height: 40,
-    borderColor: "#f0f8ff",
+    borderColor: "#000",
     backgroundColor: "#f9f9f9",
 
   },
@@ -107,9 +113,11 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 5,
     height: 40,
-    borderColor: "#f0f8ff",
+    borderColor: "#000",
     backgroundColor: "#f9f9f9",
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 3
 
   },
   touch:{

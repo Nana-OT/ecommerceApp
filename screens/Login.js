@@ -87,16 +87,19 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: "#f0f8ff",
     backgroundColor: "#f9f9f9",
+    borderRadius: 10,
+    borderWidth: 5
 
   },
   pass:{
-    
     width: 300,
     borderRadius: 5,
     height: 40,
     borderColor: "#f0f8ff",
     backgroundColor: "#f9f9f9",
-    marginTop: 10
+    marginTop: 10,
+    borderRadius: 10,
+    borderWidth: 5
 
   },
   touch:{
