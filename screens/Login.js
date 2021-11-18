@@ -10,7 +10,10 @@ function DetailsScreen({ navigation }) {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <ImageBackground style={styles.lback} source={require("../assets/logback.png")} />
           <View>
-              <Text style={styles.hell}>Hello User</Text>
+              <Text style={styles.hell}>The Bike</Text>
+          </View>
+          <View style={styles.shop}>
+            <Text style={styles.shop}>Shop</Text>
           </View>
           <View>
               <TextInput style ={styles.user}placeholder="Enter username or e-mail"/>
@@ -44,6 +47,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  shop:{
+    bottom: 15,
+    fontWeight:"100",
+    fontSize:30,
+    fontFamily: "Cochin",
+    marginLeft:30
   },
   acc:{
     color: "white", 
